@@ -38,23 +38,25 @@ function sumNumbers(array) {
 }
 
 
-// Iteration #3.1 Bonus: //not sure where i'm going with this
-// function sum(mixedArray) {
-//   if (!mixedArray.length) return 0;
-//   let total = 0;
+Iteration #3.1 Bonus:
+function sum(mixedArray) {
+  if (!mixedArray.length) return 0;
+  else if (numbers.length === 1) return numbers [0];
+  let count = 0;
+  for (let i=0; i < numbers.length; i++) {
+    if (typeof numbers[i] === 'string') {
+      count += numbers[i].length
+    }
+    else if (typeof numbers[i] === 'number' || typeof numbers[i] === 'boolean') {
+      count += numbers[i];
+    }
+    else {
+      throw new Error('Unsupported data type')
+    }} 
+    return count;
+  }
 
-//   for (i=0; i<mixedArray.length; i++) {
-//     if (typeof mixedArray[i] === 'string') {
-//     total += mixedArray[i].length}
-//     if (typeof mixedArray[i] === 'number') {
-//       total += mixedArray[i]}
-//   else if (typeof mixedArray[i] === 'boolean')
-//      {total += parseInt(mixedArray[i])}
-//     return total
-//   }
-
-
-
+ 
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
@@ -100,18 +102,18 @@ const wordsUnique = [
   'bring'
 ];
 
-// function uniquifyArray(array) {
-//   if (!array.length) return null;
-//   let newArray = [];
+ function uniquifyArray(array) {
+  if (!array.length) return null;
+  let newArray = [];
 
-//   for (let i=0; i < array.length; i++) {
-//   if (newArray.includes(array[i]) === false) 
-//   {newArray.push(arrayOne[i])}
+  for (let i=0; i < array.length; i++) {
+  if (!newArray.includes(array[i])) {
+  newArray.push(arrayOne[i])}
+  }
+  return newArray;
+}
 
-//   return newArray
-// }
-
-//working solution but attempting the other solution above (not inc. indexOf)
+//working solution but including indexOf (with Henri's tips)
 // function uniquifyArray(arrayOne) {
 //   if (!arrayOne.length) return null;
 //   let newArray = [];
